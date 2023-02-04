@@ -39,7 +39,6 @@ jobs:
           repo: nuclei-templates
           base: main
           head: main
-          merge_method: merge
         #uses: aormsby/Fork-Sync-With-Upstream-action@v3.4
         #with:
         #  # REQUIRED 'target_repo_token' exactly like this!
