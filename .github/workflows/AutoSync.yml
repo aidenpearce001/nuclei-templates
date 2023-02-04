@@ -32,16 +32,24 @@ jobs:
       # Step 2: Sync Fork 
       - name: Sync and merge upstream repository with your current repository
         id: sync
-        uses: aormsby/Fork-Sync-With-Upstream-action@v3.4
+        uses: tgymnich/fork-sync@v1.8
         with:
-          # REQUIRED 'target_repo_token' exactly like this!
-          target_repo_token: ${{ secrets.WORKFLOW_TOKEN }}
-          upstream_sync_branch: main
-          target_sync_branch: main
-          target_branch_push_args: '--force'
-          upstream_pull_args: '--allow-unrelated-histories'
-          upstream_sync_repo: projectdiscovery/nuclei-templates
-          upstream_repo_access_token: ${{ secrets.UPSTREAM_REPO_SECRET }}
+          token: ${{ secrets.WORKFLOW_TOKEN }}
+          owner: projectdiscovery
+          repo: nuclei-templates
+          base: main
+          head: main
+          merge_method: merge
+        #uses: aormsby/Fork-Sync-With-Upstream-action@v3.4
+        #with:
+        #  # REQUIRED 'target_repo_token' exactly like this!
+        #  target_repo_token: ${{ secrets.WORKFLOW_TOKEN }}
+        #  upstream_sync_branch: main
+        #  target_sync_branch: main
+        #  target_branch_push_args: '--force'
+        #  upstream_pull_args: '--allow-unrelated-histories'
+        #  upstream_sync_repo: projectdiscovery/nuclei-templates
+        #  upstream_repo_access_token: ${{ secrets.UPSTREAM_REPO_SECRET }}
 
       # Step 3: Display a sample message based on the sync output var 'has_new_commits'
       - name: New commits found
