@@ -27,7 +27,7 @@ jobs:
           fetch-depth: 500
           token: ${{ secrets.WORKFLOW_TOKEN }}
       - run: |
-              #git filter-branch -- --all
+            git filter-branch -- --all
 
       # Step 2: Sync Fork 
       - name: Sync and merge upstream repository with your current repository
