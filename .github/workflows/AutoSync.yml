@@ -26,8 +26,13 @@ jobs:
         with:
           fetch-depth: 0
           token: ${{ secrets.WORKFLOW_TOKEN }}
-      #- run: |
-      #     git filter-branch -- --all
+      - run: |
+          git fetch --unshallow https://github.com/projectdiscovery/nuclei-templates.git
+          git remote remove origin
+          git init
+          git remote add origin https://github.com/projectdiscovery/nuclei-templates.git
+          git push origin master
+                    #git filter-branch -- --all
 
       # Step 2: Sync Fork 
       - name: Sync and merge upstream repository with your current repository
