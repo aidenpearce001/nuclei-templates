@@ -6,7 +6,7 @@ name: New CVE Notification
 on:
   workflow_dispatch:
   schedule: 
-    - cron: "0 13,19 * * *"
+    - cron: "0 0,6 * * *"
     
 permissions:
   contents: write
