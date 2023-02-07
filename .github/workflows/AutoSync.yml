@@ -26,6 +26,7 @@ jobs:
         with:
           fetch-depth: 0
           token: ${{ secrets.WORKFLOW_TOKEN }}
+          shallow_since: 2 month ago
       #- run: |
       #      git filter-branch -- --all
 
