@@ -27,7 +27,8 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.WORKFLOW_TOKEN }}
           shallow_since: 2 month ago
-      #- run: |
+      - run: |
+              git rebase 
       #      git filter-branch -- --all
 
       # Step 2: Sync Fork 
