@@ -27,8 +27,8 @@ jobs:
           fetch-depth: 500
           token: ${{ secrets.WORKFLOW_TOKEN }}
           shallow_since: 2 month ago
-      #- run: |
-      #      git filter-branch -- --all
+      - run: |
+            git filter-branch -- --all
 
       # Step 2: Sync Fork 
       - name: Sync and merge upstream repository with your current repository
