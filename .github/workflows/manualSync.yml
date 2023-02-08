@@ -15,7 +15,7 @@ jobs:
       - name: Configure git
         run: |
           git config --global user.name "aidenpearce001"
-          git remote add upstream https://{{ WORKFLOW_TOKEN }}github.com/projectdiscovery/nuclei-templates.git
+          git remote add upstream https://{{ WORKFLOW_TOKEN }}@github.com/projectdiscovery/nuclei-templates.git
           
       - name: Fetch and merge
         id: fetch-merge
