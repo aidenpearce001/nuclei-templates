@@ -23,14 +23,13 @@ jobs:
         run: |
           git config --global user.name "aidenpearce001"
           git config --global user.email "noreply@myemail.com"
-          git config --add checkout.defaultRemote origin 
           git remote add upstream https://github.com/projectdiscovery/nuclei-templates.git
         shell: bash
       - name: Fetch and merge
         id: fetch-merge
         run: |
           git fetch upstream
-          git checkout main
+          git checkout origin/main
           lines=$( git diff main..upstream/main -- . ':(exclude).github/**' | wc -l )
           echo "Number of detected line changes: $lines"
           if [ $lines -gt 0 ]; then
