@@ -1,26 +1,24 @@
-name: Scheduled Merge Remote Action
-on: 
-  schedule:
-    - cron: '0 0 * * 1'
-    # scheduled for 00:00 every Monday
+on:
   workflow_dispatch:
 
 jobs:
-  merge-upstream:
+  fetch-upstream:
     runs-on: ubuntu-latest
-    steps: 
+    name: Fetch Upstream
+    steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v1
         with:
-          ref: main           # set the branch to merge to
-          fetch-depth: 0 
-      - run:
-         git pull --rebase
-      - name: Merge Upstream
-        uses: exions/merge-upstream@v1
-        with:
-          upstream: projectdiscovery/nuclei-templates      # set the upstream repo
-          upstream-branch: main   # set the upstream branch to merge from
-          branch: main          # set the branch to merge to
+          ref: main
+          token: ${{ github.token }}
+          
+      - name: Fetch and merge
+        id: fetch-merge
+        run: |
+          git remote add upstream https://github.com/projectdiscovery/nuclei-templates.git
+          git fetch upstream
+          
+          git checkout main
+          git merge upstream/main
 
- 
+          git push origin main
