@@ -12,10 +12,14 @@ jobs:
           ref: main
           token: ${{ github.token }}
           
+      - name: Configure git
+        run: |
+          git config --global user.name "aidenpearce001"
+          git remote add upstream https://github.com/projectdiscovery/nuclei-templates.git
+          
       - name: Fetch and merge
         id: fetch-merge
         run: |
-          git remote add upstream https://github.com/projectdiscovery/nuclei-templates.git
           git fetch upstream
           
           git checkout main
