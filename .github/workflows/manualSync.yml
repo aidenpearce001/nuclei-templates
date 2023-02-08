@@ -23,6 +23,7 @@ jobs:
         run: |
           git config --global user.name "aidenpearce001"
           git config --global user.email "noreply@myemail.com"
+          git config --add checkout.defaultRemote origin 
           git remote add upstream https://github.com/projectdiscovery/nuclei-templates.git
         shell: bash
       - name: Fetch and merge
