@@ -1,29 +1,16 @@
-name: Manual Sync with UpStream
-
+name: Sync Fork
 on:
-  workflow_dispatch:
-
+ 
+    
+  workflow_dispatch 
 jobs:
-  fetch-upstream:
+  sync_fork:
     runs-on: ubuntu-latest
-    name: Fetch Upstream
     steps:
-      - name: Checkout
-        uses: actions/checkout@v1
-        with:
-          ref: main
-          token: ${{ github.token }}
-          
-      - name: Configure git
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git remote add upstream "https://github.com/projectdiscovery/nuclei-templates.git"
-          
-      - name: Fetch and merge
-        id: fetch-merge
-        run: |
-          git fetch upstream
-          git checkout main
-          git reset --hard upstream/main
-          git push origin main --force
+    - name: Fetch upstream
+      uses: actions/checkout@v2
+      with:
+        repository: upstream/repository
+        ref: master
+    - name: Merge upstream
+      run: git merge upstream/master
