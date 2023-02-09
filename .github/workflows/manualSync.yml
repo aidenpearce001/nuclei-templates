@@ -18,7 +18,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git remote add upstream "ttps://github.com/projectdiscovery/nuclei-templates.git"
+          git remote add upstream "https://github.com/projectdiscovery/nuclei-templates.git"
           
       - name: Fetch and merge
         id: fetch-merge
