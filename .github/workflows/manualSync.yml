@@ -1,8 +1,7 @@
 name: Sync Fork
 on:
- 
-    
   workflow_dispatch 
+  
 jobs:
   sync_fork:
     runs-on: ubuntu-latest
@@ -10,7 +9,7 @@ jobs:
     - name: Fetch upstream
       uses: actions/checkout@v2
       with:
-        repository: upstream/repository
-        ref: master
+        repository: projectdiscovery/nuclei-templates
+        ref: main
     - name: Merge upstream
-      run: git merge upstream/master
+      run: git merge upstream/main
