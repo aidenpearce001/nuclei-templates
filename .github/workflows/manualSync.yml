@@ -1,3 +1,5 @@
+name: Manual Sync with UpStream
+
 on:
   workflow_dispatch:
 
@@ -14,15 +16,14 @@ jobs:
           
       - name: Configure git
         run: |
-          git config --global user.name "aidenpearce001"
-          git remote add upstream https://{{ WORKFLOW_TOKEN }}@github.com/projectdiscovery/nuclei-templates.git
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git remote add upstream "ttps://github.com/projectdiscovery/nuclei-templates.git"
           
       - name: Fetch and merge
         id: fetch-merge
         run: |
           git fetch upstream
-          
           git checkout main
-          git merge upstream/main
-
-          git push origin main
+          git reset --hard upstream/main
+          git push origin main --force
