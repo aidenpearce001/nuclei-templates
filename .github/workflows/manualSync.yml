@@ -15,4 +15,5 @@ jobs:
       run: |
           git checkout main
           git fetch --all
+          git rebase upstream/main
           git merge upstream/main
