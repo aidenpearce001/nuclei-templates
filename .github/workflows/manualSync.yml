@@ -12,4 +12,7 @@ jobs:
         repository: projectdiscovery/nuclei-templates
         ref: main
     - name: Merge upstream
-      run: git merge upstream/main
+      run: |
+          git checkout main
+          git fetch --all
+          git merge upstream/main
