@@ -16,7 +16,7 @@ jobs:
         
     - name: Merge changes from the remote branch
       run: |
-        git remote add upstream projectdiscovery/nuclei-templates.git
+        git remote add upstream https://github.com/projectdiscovery/nuclei-templates.git
         git fetch upstream
         git merge upstream/main
 
