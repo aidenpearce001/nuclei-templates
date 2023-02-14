@@ -12,6 +12,7 @@ jobs:
         ref: main
         token: ${{ secrets.WORKFLOW_TOKEN }}
         repository: projectdiscovery/nuclei-templates
+        depth: 0
 
     - name: Fork the upstream repository
       uses: peter-evans/close-fork-pulls@v2
