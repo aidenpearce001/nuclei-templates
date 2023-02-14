@@ -37,10 +37,6 @@ jobs:
           target_repo_token: ${{ secrets.WORKFLOW_TOKEN }}
           upstream_sync_branch: main
           target_sync_branch: main
-          target_branch_push_args: '--force'
-          upstream_pull_args: '--allow-unrelated-histories'
-          upstream_sync_repo: projectdiscovery/nuclei-templates
-          upstream_repo_access_token: ${{ secrets.UPSTREAM_REPO_SECRET }}
 
       # Step 3: Display a sample message based on the sync output var 'has_new_commits'
       - name: New commits found
