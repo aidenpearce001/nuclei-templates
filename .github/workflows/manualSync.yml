@@ -6,14 +6,19 @@ jobs:
   sync_fork:
     runs-on: ubuntu-latest
     steps:
-    - name: Fetch upstream
+    - name: Checkout the upstream repository
       uses: actions/checkout@v2
       with:
-        repository: projectdiscovery/nuclei-templates
         ref: main
-    - name: Merge upstream
-      run: |
-          git checkout main
-          git fetch --all
-          git rebase upstream/main
-          git merge upstream/main
+        repository: upstream/repo
+
+    - name: Fork the upstream repository
+      uses: peter-evans/fork@v2
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Push changes to the forked repository
+      uses: ad-m/github-push-action@v0.8.0
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: main
