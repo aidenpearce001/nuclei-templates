@@ -15,7 +15,7 @@ jobs:
     - name: Fork the upstream repository
       uses: peter-evans/close-fork-pulls@v2
       with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
+        github-token: ${{ secrets.WORKFLOW_TOKEN }}
 
     - name: Push changes to the forked repository
       uses: ad-m/github-push-action@master
