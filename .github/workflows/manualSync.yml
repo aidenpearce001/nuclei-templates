@@ -13,6 +13,12 @@ jobs:
         token: ${{ secrets.WORKFLOW_TOKEN }}
         repository: projectdiscovery/nuclei-templates
         depth: 0
+        
+    - name: Merge changes from the remote branch
+      run: |
+        git remote add upstream projectdiscovery/nuclei-templates.git
+        git fetch upstream
+        git merge upstream/main
 
     - name: Fork the upstream repository
       uses: peter-evans/close-fork-pulls@v2
