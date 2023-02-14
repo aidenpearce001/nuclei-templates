@@ -10,7 +10,7 @@ jobs:
       uses: actions/checkout@v2
       with:
         ref: main
-        repository: upstream/repo
+        repository: projectdiscovery/nuclei-templates
 
     - name: Fork the upstream repository
       uses: peter-evans/close-fork-pulls@v2
