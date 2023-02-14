@@ -10,6 +10,7 @@ jobs:
       uses: actions/checkout@v2
       with:
         ref: main
+        token: ${{ secrets.WORKFLOW_TOKEN }}
         repository: projectdiscovery/nuclei-templates
 
     - name: Fork the upstream repository
