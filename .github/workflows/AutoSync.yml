@@ -27,8 +27,6 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.WORKFLOW_TOKEN }}
           repository: projectdiscovery/nuclei-templates
-      #- run: |
-      #      git filter-branch -- --all
 
       # Step 2: Sync Fork 
       - name: Sync and merge upstream repository with your current repository
