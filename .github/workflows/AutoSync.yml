@@ -22,17 +22,10 @@ jobs:
       # Step 1: Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout target repo
 
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
-          token: ${{ secrets.WORKFLOW_TOKEN }}
           repository: projectdiscovery/nuclei-templates
-          
-      - name: Merge changes from the remote branch
-        run: |
-          git remote add upstream https://github.com/projectdiscovery/nuclei-templates.git
-          git fetch upstream
-          git merge upstream/main
 
       # Step 2: Sync Fork 
       - name: Sync and merge upstream repository with your current repository
@@ -41,9 +34,9 @@ jobs:
         with:
           # REQUIRED 'target_repo_token' exactly like this!
           target_repo_token: ${{ secrets.WORKFLOW_TOKEN }}
+          upstream_sync_repo: projectdiscovery/nuclei-templates
           upstream_sync_branch: main
           target_sync_branch: main
-          sync: true
 
       # Step 3: Display a sample message based on the sync output var 'has_new_commits'
       - name: New commits found
