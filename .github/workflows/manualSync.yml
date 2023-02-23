@@ -29,7 +29,7 @@ jobs:
     - name: Check if new files exist
       if: steps.compare-branches.outputs.new_files != ''
       run: |
-        echo "New files found: $(cat new_files.txt)"
+        echo "New files found: $(cat new_files.txt)" >> $GITHUB_OUTPUT
         # Perform actions here such as sending a notification or triggering a new workflow
       env:
         NEW_FILES: ${{ steps.compare-branches.outputs.new_files }}
