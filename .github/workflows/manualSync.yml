@@ -1,33 +1,35 @@
-name: Sync Fork
+name: Check for new file uploads
+
 on:
-  workflow_dispatch 
-  
+  push:
+    branches:
+      - main
+
 jobs:
-  sync_fork:
+  check-for-new-file-uploads:
     runs-on: ubuntu-latest
+
     steps:
-    - name: Checkout the upstream repository
+    - name: Checkout code
       uses: actions/checkout@v2
       with:
         ref: main
-        token: ${{ secrets.WORKFLOW_TOKEN }}
-        repository: projectdiscovery/nuclei-templates
-        depth: 0
-        
-    - name: Merge changes from the remote branch
+        submodules: 'recursive'
+        depth: 1
+
+    - name: Fetch upstream repository
       run: |
         git remote add upstream https://github.com/projectdiscovery/nuclei-templates.git
         git fetch upstream
-        git merge upstream/main
 
-    - name: Fork the upstream repository
-      uses: peter-evans/close-fork-pulls@v2
-      with:
-        github-token: ${{ secrets.WORKFLOW_TOKEN }}
+    - name: Compare branches
+      run: |
+        git diff --name-only upstream/main > new_files.txt
 
-    - name: Push changes to the forked repository
-      uses: ad-m/github-push-action@master
-      with:
-        github_token: ${{ secrets.WORKFLOW_TOKEN }}
-        branch: main
-        force: true
+    - name: Check if new files exist
+      if: steps.compare-branches.outputs.new_files != ''
+      run: |
+        echo "New files found: $(cat new_files.txt)"
+        # Perform actions here such as sending a notification or triggering a new workflow
+      env:
+        NEW_FILES: ${{ steps.compare-branches.outputs.new_files }}
