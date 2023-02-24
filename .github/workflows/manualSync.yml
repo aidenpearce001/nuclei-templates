@@ -25,6 +25,13 @@ jobs:
     - name: Compare branches
       run: |
         git diff --name-only upstream/main > new_files.txt
+        
+    - name: Get version
+      id: vars
+      run: echo ::set-output name=output::$(cat new_files.txt)
+      
+    - name: Test output
+      run: echo ${{ steps.vars.outputs.output }}
 
     - name: Check if new files exist
       if: steps.compare-branches.outputs.new_files != ''
