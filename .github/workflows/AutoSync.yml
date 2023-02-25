@@ -27,11 +27,6 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.WORKFLOW_TOKEN }}
        #   repository: projectdiscovery/nuclei-templates
-       
-      - name: Update upstream branch information
-        run: |
-          git remote set-branches upstream '*'
-          git fetch --prune upstream
 
       # Step 2: Sync Fork 
       - name: Sync and merge upstream repository with your current repository
