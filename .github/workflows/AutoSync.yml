@@ -15,6 +15,9 @@ jobs:
   # check_upstream job will check if upstream repo have any changed or not
   check_upstream: 
     runs-on: ubuntu-latest
+    
+    outputs:
+      output1: ${{ steps.vars.outputs.output }}
 
     steps:
     - name: Checkout code
@@ -52,7 +55,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Sync with Upstream Repo
     needs: check_upstream
-    if: ${{ check_upstream.steps.compare-branches.outputs.new_files != '' }} 
+    if: ${{ needs.check_upstream.outputs.output1 != '' }} 
 
     steps:
       # Step 1: Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
