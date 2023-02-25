@@ -24,7 +24,7 @@ jobs:
 
     - name: Compare branches
       run: |
-        git diff --name-only upstream/main > new_files.txt
+        git diff --name-only HEAD..upstream/main > new_files.txt && sed -i '/workflow\|.github\|^\.\|md$\|txt$\|cves.json/d' new_files.txt
         
     - name: Get version
       id: vars
