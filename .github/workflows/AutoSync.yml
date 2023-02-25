@@ -50,6 +50,7 @@ jobs:
   sync_upstream:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
+    name: Sync with Upstream Repo
     needs: check_upstream
     if: ${{ check_upstream.steps.compare-branches.outputs.new_files != '' }} 
 
