@@ -39,10 +39,10 @@ jobs:
         
     - name: Set Variable
       id: vars
-      run: echo ::set-output name=outputs::$(cat new_files.txt)
+      run: echo "outputs=$(cat new_files.txt)" >> $GITHUB_OUTPUT
       
     - name: cat new_files.txt
-      run: echo ${{ steps.vars.outputs.output }}
+      run: echo ${{ steps.vars.outputs }}
 
     - name: Check if new_files exist
       if: steps.compare-branches.outputs.new_files != ''
