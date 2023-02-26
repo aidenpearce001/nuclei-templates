@@ -39,7 +39,8 @@ jobs:
         
     - name: Set Variable
       id: vars
-      run: echo "changed=$(cat new_files.txt)" >> $GITHUB_OUTPUT
+      run: |
+        echo "::set-output name=outputs::$(cat new_files.txt)"
       
     - name: cat new_files.txt
       run: echo ${{ steps.vars.outputs }}
