@@ -34,7 +34,8 @@ jobs:
         
     - name: test diff
       run: | 
-        git diff --name-only HEAD..upstream/main
+        message=$(git diff --name-only HEAD..upstream/main | tr '\n' ' ')
+        echo "text=$message" >> $GITHUB_OUTPUT
 
     # get the diff between current repo and upstream repo and output to new_files.txt
     - name: Compare branches
