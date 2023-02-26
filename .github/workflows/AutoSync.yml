@@ -31,11 +31,6 @@ jobs:
       run: |
         git remote add upstream https://github.com/projectdiscovery/nuclei-templates.git
         git fetch upstream
-        
-    - name: test diff
-      run: | 
-        message=$(git diff --name-only HEAD..upstream/main | tr '\n' ' ')
-        echo "text=$message" >> $GITHUB_OUTPUT
 
     # get the diff between current repo and upstream repo and output to new_files.txt
     - name: Compare branches
@@ -44,7 +39,7 @@ jobs:
         
     - name: Set Variable
       id: vars
-      run: echo "outputs=$(cat new_files.txt)" >> $GITHUB_OUTPUT
+      run: echo "changed=$(cat new_files.txt)" >> $GITHUB_OUTPUT
       
     - name: cat new_files.txt
       run: echo ${{ steps.vars.outputs }}
