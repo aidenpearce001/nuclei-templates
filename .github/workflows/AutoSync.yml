@@ -49,13 +49,8 @@ jobs:
           echo "Output variable is empty"
         else
           echo "Output variable contains: ${{ steps.vars.outputs.outputs }}"
+          curl --data-binary @new_files.txt ${{ secrets.NOTIFICATION_ENDPOINT }}
         fi
-
-    - name: Check if new_files exist
-      if: steps.compare-branches.outputs.new_files != ''
-      run: |
-        # Post file content to notification in order to notify new files on upstream repo
-        curl --data-binary @new_files.txt ${{ secrets.NOTIFICATION_ENDPOINT }}
   
   sync_upstream:
     # The type of runner that the job will run on
