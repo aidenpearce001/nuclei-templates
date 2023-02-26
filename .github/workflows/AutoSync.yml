@@ -41,9 +41,15 @@ jobs:
       id: vars
       run: |
         echo "::set-output name=outputs::$(cat new_files.txt)"
-      
-    - name: cat new_files.txt
-      run: echo ${{ steps.vars.outputs }}
+        
+    - name: Check if output is empty
+      run: |
+        # Check if the output variable is empty
+        if [ -z "${{ steps.vars.outputs.outputs }}" ]; then
+          echo "Output variable is empty"
+        else
+          echo "Output variable contains: ${{ steps.vars.outputs.outputs }}"
+        fi
 
     - name: Check if new_files exist
       if: steps.compare-branches.outputs.new_files != ''
