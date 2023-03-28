@@ -80,7 +80,7 @@ jobs:
           target_sync_branch: main
           
           # This arg may have to change in order to fix the unshallow error
-          shallow_since: '2 month ago'
+          shallow_since: '3 month ago'
 
       # Step 3: Display a sample message based on the sync output var 'has_new_commits'
       - name: New commits found
