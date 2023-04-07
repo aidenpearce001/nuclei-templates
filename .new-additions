@@ -20,7 +20,7 @@ cves/2021/CVE-2021-24351.yaml
 cves/2021/CVE-2021-24666.yaml
 cves/2021/CVE-2021-29505.yaml
 cves/2021/CVE-2021-39141.yaml
-cves/2021/CVE-2021-39144 .yaml
+cves/2021/CVE-2021-39144.yaml
 cves/2021/CVE-2021-39146.yaml
 cves/2021/CVE-2021-39152.yaml
 cves/2022/CVE-2022-0212.yaml
@@ -43,6 +43,7 @@ cves/2023/CVE-2023-0552.yaml
 cves/2023/CVE-2023-0942.yaml
 cves/2023/CVE-2023-0968.yaml
 cves/2023/CVE-2023-1080.yaml
+cves/2023/CVE-2023-1177.yaml
 cves/2023/CVE-2023-24278.yaml
 cves/2023/CVE-2023-24367.yaml
 cves/2023/CVE-2023-24657.yaml
@@ -55,6 +56,7 @@ exposed-panels/arcgis/arcgis-tokens.yaml
 exposed-panels/fortinet/fortinet-fortimanager-panel.yaml
 exposed-panels/hestia-panel.yaml
 exposed-panels/i-mscp-panel.yaml
+exposed-panels/seagate-nas-login.yaml
 exposed-panels/sonic-wall-login.yaml
 exposed-panels/web-viewer-panel.yaml
 exposures/logs/opentsdb-status.yaml
