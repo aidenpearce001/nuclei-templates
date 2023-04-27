@@ -8,8 +8,8 @@ TEMPLATES-STATS.json:12bc23dde8b563fc150cc6069052125f5d641a14
 TEMPLATES-STATS.md:41f6a203b04ecc02bd351c29ebce5ea2d77b69ac
 TOP-10.md:2fe27ed1a473762e975eaac31cfc41ae7fab6212
 contributors.json:ff4ddb7612fdb9f10ce078a3aa796c1e07c8dcf4
-cves.json:eefcba5969f56d0e53f92712b84ff5ba945a9b13
-cves.json-checksum.txt:992aea6b1e266529037f5871a816cd11773dc66c
+cves.json:da39a3ee5e6b4b0d3255bfef95601890afd80709
+cves.json-checksum.txt:85f1a28ae1867fe80ef0a7e94bda2ae8c657696f
 dns/azure-takeover-detection.yaml:e87a4d2d8bbda68ced2460cca27e598a8f6bf470
 dns/caa-fingerprint.yaml:db58ace220aea971c5019c9b82beab00bd2f5ad5
 dns/cname-fingerprint.yaml:a5cf5caa268a11dc2e7b866324ea12e8b0a04646
@@ -1254,6 +1254,7 @@ http/cves/2020/CVE-2020-27191.yaml:d755a638adad972480b05dcee37ff42e76f2339d
 http/cves/2020/CVE-2020-2733.yaml:3b217f222b8a844fab1da7fb5b60bdf7f28c5a4e
 http/cves/2020/CVE-2020-27361.yaml:0658b2e7d89e5cd29c360151786c14dd07c7df84
 http/cves/2020/CVE-2020-27467.yaml:f746eb07c005089e342aca4bfc4ca3e428a76f3d
+http/cves/2020/CVE-2020-27481.yaml:b33f69d5ecd8c7d0ac69ad856911bddcd22af213
 http/cves/2020/CVE-2020-27735.yaml:89046d930303ee786f45580752442c270e42db95
 http/cves/2020/CVE-2020-27866.yaml:bd822367ebee4a8349226cd1d724a527a3691e3a
 http/cves/2020/CVE-2020-27982.yaml:c55bacae06cc27d732754a25bd84fd933116a734
@@ -1551,6 +1552,7 @@ http/cves/2021/CVE-2021-30128.yaml:18c6914a0075955d0e5fdc0dffe60f7b80bb486b
 http/cves/2021/CVE-2021-30134.yaml:cdc4c499c74fd0e6e532a157a885a6cdd35539c0
 http/cves/2021/CVE-2021-30151.yaml:74e5f31e906a81300a8708c8395492ee75b32036
 http/cves/2021/CVE-2021-3017.yaml:103c1eb71152d17db86534c89b4f8c8ee06a5a36
+http/cves/2021/CVE-2021-30175.yaml:f0f366348fa0d59a59d2d3df158f188203534414
 http/cves/2021/CVE-2021-3019.yaml:165f04a4f9f24de89789278d833f15d63e7cb88f
 http/cves/2021/CVE-2021-30213.yaml:35608acfbc60f7c17fa78221cc49624ea771c329
 http/cves/2021/CVE-2021-30461.yaml:7f177d8ff0780db1512c94a776a9cca055a1cf7c
@@ -2135,6 +2137,7 @@ http/cves/2023/CVE-2023-27587.yaml:948a890384662f44c000be013462636ddcc9d991
 http/cves/2023/CVE-2023-28343.yaml:f476073191867ed90c2c609aac34f9c06e4aa9d9
 http/cves/2023/CVE-2023-28432.yaml:8874d4e16b0920f8ccaecd163914d787de16c96e
 http/cves/2023/CVE-2023-29084.yaml:d5cacdd7a1bfa5672a6f6ec1d6c8a6899c82a5f1
+http/cves/2023/CVE-2023-29922.yaml:49267c8db50815b31e4bd3e94831cab13f616829
 http/default-logins/3com/3com-nj2000-default-login.yaml:3c46b5aafc39a5bab5ffebf26f6ba0cf97019d1f
 http/default-logins/UCMDB/ucmdb-default-login.yaml:4cc3a46850695b0e5a8ea99c5c3af420adc2af3f
 http/default-logins/abb/cs141-default-login.yaml:9b0bd5a3888b1501b9e91359f4d9e0c1f01a1405
@@ -2378,8 +2381,8 @@ http/exposed-panels/caton-network-manager-system.yaml:9561921837ea4e657868d2bff9
 http/exposed-panels/ccm-detect.yaml:1fc05e835cb3e6b62f3671fe1475b6e961825e93
 http/exposed-panels/centreon-panel.yaml:a801d4b8643d42f94a0a492e508421424ba3a267
 http/exposed-panels/cerebro-panel.yaml:c85b15f82f76e9d2316f179f9300f34f2d60cc61
-http/exposed-panels/checkmarx-panel.yaml:b336265b93ed25a2c6431dc507e337990aef0bf7
-http/exposed-panels/checkmk-login.yaml:d4b0330df365e97998c33e1562f212c51c23dd19
+http/exposed-panels/checkmk/checkmarx-panel.yaml:b336265b93ed25a2c6431dc507e337990aef0bf7
+http/exposed-panels/checkmk/checkmk-login.yaml:d4b0330df365e97998c33e1562f212c51c23dd19
 http/exposed-panels/checkpoint/ssl-network-extender.yaml:91f22cd0a93b2f41f4d8f1a47b96393ba236a327
 http/exposed-panels/checkpoint-panel.yaml:50596e4326a9213a99368c7e614f4985018c839a
 http/exposed-panels/cisco/cisco-ace-device-manager.yaml:e0fc98f7adf0037bcf12f347bd83adc10ec56f6b
@@ -2848,6 +2851,7 @@ http/exposed-panels/project-insight-login.yaml:833d57be208369983742aa705856ba524
 http/exposed-panels/projectsend-login.yaml:4123402713b9de9c6a35c594431c0c1e7857ae9a
 http/exposed-panels/prometheus-exposed-panel.yaml:223347bd70d69bc3522d3b532084c3bec2281b8f
 http/exposed-panels/prometheus-pushgateway-exposed-panel.yaml:5d735c529e4e7f074d73cba2e4ede549a05cf3de
+http/exposed-panels/proxmox-panel.yaml:a932fee64010b560779e0eec6e7f76324b1592ff
 http/exposed-panels/pulsar-admin-console.yaml:3c0f202ccaea2766ceadeda26aebc5976d0d9f90
 http/exposed-panels/pulsar-adminui-panel.yaml:5df0eb4dc1871b8b94bb71d97d37e670b87ed3a3
 http/exposed-panels/pulsar360-admin-panel.yaml:737d596227ae947e161e4c5d704aec2d46eafa9d
@@ -2952,6 +2956,7 @@ http/exposed-panels/sonicwall-management-panel.yaml:649d6bc6a74cf8cff73710cadc5e
 http/exposed-panels/sonicwall-sslvpn-panel.yaml:3c2bcb9549d7836acdd394b80c6a2f9372b15675
 http/exposed-panels/sophos-fw-version-detect.yaml:3a0dcd4cc410d650932c10f59a4c59a0d7713d53
 http/exposed-panels/sophos-mobile-panel.yaml:b6f219daa839ae605ff72fffd300d17025e7c511
+http/exposed-panels/sophos-web-appliance.yaml:4c1a065a645df36431b5aaa4f9023b90bc2d8d37
 http/exposed-panels/spacelogic-cbus-panel.yaml:cf908725d4f5e38ea5224a497f83a374108ace36
 http/exposed-panels/spark-panel.yaml:2048cb2996d44c8ecf76f26595a39b511dff1642
 http/exposed-panels/sphider-login.yaml:302a2998695edd36dbeafd23f1c4c24f6def68db
@@ -6181,7 +6186,7 @@ ssl/ssl-dns-names.yaml:0ee89b82598260102f00508deb0354877457ac5a
 ssl/tls-version.yaml:defb1b1c7294c0a57b98020dba74e0b0fce07d31
 ssl/untrusted-root-certificate.yaml:9d87c84523725b319ebf63e798085b7ec7c0e5b8
 ssl/weak-cipher-suites.yaml:77401e59fadeae66c229c7a0c0ea7ac94178dd7c
-templates-checksum.txt:a12344225c7205f7891e6d34ce5f36c86b183a89
+templates-checksum.txt:8b82a160cf6dcf5eb942a37881f56edcce1b49ff
 wappalyzer-mapping.yml:7f03bd65baacac20c1dc6bbf35ff2407959574f1
 workflows/74cms-workflow.yaml:a6732eab4577f5dcf07eab6cf5f9c683fea75b7c
 workflows/acrolinx-workflow.yaml:ae86220e8743583a24dc5d81c8a83fa01deb157f
@@ -6210,7 +6215,7 @@ workflows/centos-workflow.yaml:b62d37d7c3470540c86e8c415288d3832f2534c2
 workflows/chamilo-workflow.yaml:1f18c98a3471c9db9a5a549e33bea5a57b22c8dd
 workflows/checkpoint-workflow.yaml:6d55f8110b1e085fcbfb11687d45f95001652641
 workflows/cherokee-workflow.yaml:be372d31658135ce4753a7bbbd522671a4806da0
-workflows/circarlife-workflow.yaml:5167e0c1adf551b444c8172cc18867da59ad7943
+workflows/circarlife-workflow.yaml:02342228a81587aad3de0a23b14c72318ed7ba73
 workflows/cisco-asa-workflow.yaml:1f184dd5e676359f8e3c90053aa56395e432cfac
 workflows/cisco-meraki-workflow.yaml:db50686f059621b6d741bb1198f0e519b1848114
 workflows/cockpit-workflow.yaml:59c607b23d48b674f067aafa4b549b04d2a09681
@@ -6261,7 +6266,7 @@ workflows/jetty-workflow.yaml:910c838c22989532ce9450b7eac14452e4fcd857
 workflows/jira-workflow.yaml:cad07f068bb3fca74cd0c26acb56683a5f0eba52
 workflows/joomla-workflow.yaml:15c3f53c5e10801be8877c97c8bda7262d6364c2
 workflows/kentico-workflow.yaml:5ff7d49cc90a581eeff2b7aacf9346fd8b98fc0f
-workflows/keycloak-workflow.yaml:4fb5ffc3e00d4cefcde6a0ba0206712476bd03b1
+workflows/keycloak-workflow.yaml:e7a4fb15cbd51107269c993cd95479bbeae40595
 workflows/kibana-workflow.yaml:81ba154caace9a6c519dbb9854cb2af45f526246
 workflows/kindeditor-workflow.yaml:3a45b58f9d3be065ba96d5134bf98b7f820c7f72
 workflows/kong-workflow.yaml:ba26e348d9e2cd64dcf2355861413abc231b1ab4
@@ -6330,7 +6335,7 @@ workflows/sidekiq-workflow.yaml:95bb9a94eb367cb7f9f972406984f91d91d80148
 workflows/sitecore-workflow.yaml:7c4577c4f4bb2c96fc45a485e55974ee5b6e9911
 workflows/skywalking-workflow.yaml:62d33c94ff8ed9522d196ae72bb77cb8c27888c0
 workflows/solarwinds-orion-workflow.yaml:d92b41f6102f2e69794741d86a8c06dd196d1aa4
-workflows/solr-workflow.yaml:0c2c6872f6106908c2c66c92468ba0a0af0cbcd7
+workflows/solr-workflow.yaml:21a2cee071c79e91a231def90ef717419385d7e6
 workflows/sonarqube-workflow.yaml:3795683ce15cfc9e8477b641c2996648686689e4
 workflows/sourcebans-workflow.yaml:3b340233c4b92f8b7f026f6e3544a8803b7ed0cc
 workflows/splunk-workflow.yaml:752530bc226c84e15fe26da90bd347504bede67b
