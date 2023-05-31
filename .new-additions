@@ -24,8 +24,10 @@ http/cves/2023/CVE-2023-29923.yaml
 http/cves/2023/CVE-2023-32243.yaml
 http/exposed-panels/axway-api-manager-panel.yaml
 http/exposed-panels/interactsoftware-interact.yaml
+http/exposed-panels/isams-panel.yaml
 http/exposed-panels/odoo-panel.yaml
 http/exposed-panels/repetier-server-panel.yaml
+http/exposed-panels/sauter-moduwebvision-panel.yaml
 http/exposed-panels/shardingsphere-panel.yaml
 http/exposures/apis/jeecg-boot-swagger.yaml
 http/exposures/configs/blazor-boot.yaml
@@ -48,3 +50,4 @@ http/vulnerabilities/zyxel/unauth-ztp-ping.yaml
 network/cves/2016/CVE-2016-3510.yaml
 network/cves/2017/CVE-2017-5645.yaml
 network/cves/2020/CVE-2020-11981.yaml
+ssl/insecure-cipher-suite-detect.yaml
